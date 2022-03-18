@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model StringFactory.Models.Machine
+
+<h4>Add a machine to the maintenance list</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <input type="submit" value="Add new machine" />
+}
+<p>@Html.ActionLink("Show all machines", "Index")</p>
