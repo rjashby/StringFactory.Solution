@@ -1,6 +1,7 @@
 * {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+  color: gold;
 }
 
 #headerImg {
@@ -10,11 +11,12 @@
 }
 
 #mainLogo {
-  background-color: rgb(118, 189, 109);
+  background-color: #2E6F95;
 }
 
 #navColor {
-  background-color: goldenrod;
+  background-color: #455E89;
+  color: gold;
 }
 
 #page-container {
@@ -34,16 +36,36 @@
 }
 
 a {
-  color: goldenrod;
+  color: #0091AD;
   transition: 0.5s;
 }
 
 a:hover {
-  color: forestgreen;
+  color: #0091AD;
   transform: translateY(-7px);
 }
 
 body {
-  background-color: lightgray;
+  background-color: #892B64;
   margin: 1rem;
+}
+
+li {
+  padding: 5px;
+}
+
+#engDeets li {
+  list-style-type: "🛠️";
+}
+
+#engIndex li {
+  list-style-type: "🛠️";
+}
+
+input {
+  background-color: lightslategray;
+}
+
+select {
+  background-color: lightslategray;
 }

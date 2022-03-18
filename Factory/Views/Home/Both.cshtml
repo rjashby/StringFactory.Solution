@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+
+@using StringFactory.Models;
+
+@foreach (Engineer engineer in Model)
+{
+  <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+}
