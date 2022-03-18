@@ -60,20 +60,22 @@ _A user can edit or delete engineers and machines as necessary, automatically up
 3) _Follow the steps above to view, edit, and open the files as needed._
 
 
-**Creating The Database**
+**Running the Program**
 
-1) _Open mySQl Workbench. In the Navigator, click on the "Administration" window, then select Data Import/Restore._
+1) _In your terminal, navigate to the Factory folder by starting at the root directory and typing the following into your terminal:_ ```cd Factory```
 
-2) _In Import Options, select Import from Self-Contained File, and select the file named:_ ```ryan_ashby.sql```
+2) _In the Factory directory run ```dotnet restore``` to download the needed dependencies._
 
-3) _Under Default Schema to be Imported To, select the New button, and enter the name of your database and click Ok._
+3) _Once here, you will need to run the following in your terminal:_ ```dotnet build```
 
-4) _Navigate to the tab called Import Progress and click "Start Import."_
+4) _Once the project builds (and no errors appear), you can run the program by entering the following in your terminal:_ ```dotnet run```
 
-5) _After you are finished with the above steps, reopen the Navigator > Schemas tab. Right click and select Refresh All. Your new test database will appear._
+5) _If you wish to changes made in real time, you may run:_ ```dotnet watch run```
+
+6) _At this stage, only the basic layout will be in place. You will first need to build the database to effectively use the application._
 
 
-**Using The Database** 
+**Initial Database Setup** 
 
 1) _Start by creating an appsettings.json file in the main/root directory. This file should BE KEPT PRIVATE and should be populated with the following lines of code:_
 
@@ -93,17 +95,15 @@ _A user can edit or delete engineers and machines as necessary, automatically up
 */appsettings.json
 ```
 
-**Running the Program**
+**Creating The Database**
 
-1) _In your terminal, navigate to the Factory folder by starting at the root directory and typing the following into your terminal:_ ```cd Factory```
+1) _Ensure that you have proper tools installed. Start by installing dotnet ef by running the following command in your terminal:_```dotnet tool install --global dotnet-ef```
 
-2) _In the Factory directory run ```dotnet restore``` to download the needed dependencies._
+2) _You can now add your initial migration. This will add a "Migrations" directory to your "Factory" directory. Navigate to your "Factory" directory and run the following command in your terminal:_ ```dotnet ef migrations add Initial```
 
-3) _Once here, you will need to run the following in your terminal:_ ```dotnet build```
+3) _You will now have an "Initial" migration with which you can build and view the database. Now run the following command in your terminal in the "Factory" directory:_ ```dotnet ef database update```
 
-4) _Once the project builds (and no errors appear), you can run the program by entering the following in your terminal:_ ```dotnet run```
-
-5) _If you wish to changes made in real time, you may run:_ ```dotnet watch run```
+4) _If you want to view the database, open MySQL Workbench. You should see your database, with the appropriate tables and columns. Note: the database name will be based on the name you supplied. See: Initial Database Setup, Step 1._
 
 ## Known Bugs 
 
