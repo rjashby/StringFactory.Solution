@@ -10,11 +10,11 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This Machine does not contain any Engineers</p>
+  <p>This Machine is not assigned to any Engineers</p>
 }
 else
 {
-  <h4>Engineers the Machine contains:</h4>
+  <h4>Engineers licensed to repair this Machine:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
