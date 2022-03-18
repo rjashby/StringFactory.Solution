@@ -34,7 +34,7 @@ namespace StringFactory.Controllers
       _db.SaveChanges();
       if (MachineId != 0)
       {
-        _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = enginner.EngineerId });
+        _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       }
       return RedirectToAction("Index");
@@ -61,7 +61,7 @@ namespace StringFactory.Controllers
     {
       if (MachineId != 0)
       {
-        _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = enginner.EngineerId });
+        _db.MachineEngineer.Add(new MachineEngineer() { MachineId = MachineId, EngineerId = engineer.EngineerId });
       }
       _db.Entry(engineer).State = EntityState.Modified;
       _db.SaveChanges();
