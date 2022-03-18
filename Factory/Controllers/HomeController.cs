@@ -9,11 +9,12 @@ namespace StringFactory.Controllers
 {
     public class HomeController : Controller
     {
-      private readonly StringFactoryContext _db;
+      public readonly StringFactoryContext _db;
       public HomeController(StringFactoryContext db)
       {
         _db = db;
       }
+      
       [HttpGet("/")]
       public ActionResult Index()
       {
@@ -25,6 +26,8 @@ namespace StringFactory.Controllers
       {
         var workerguys = _db.Engineers.ToList();
         var fixablestuff = _db.Machines.ToList();
+        ViewBag.E = workerguys;
+        ViewBag.M = fixablestuff;
         return View();
       }
     }

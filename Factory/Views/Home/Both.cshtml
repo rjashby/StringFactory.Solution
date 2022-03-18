@@ -2,9 +2,16 @@
   Layout = "_Layout";
 }
 
-@using StringFactory.Models;
-
-@foreach (Engineer engineer in Model)
+<ul>
+@foreach (var engineer in ViewBag.E)
 {
   <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
 }
+</ul>
+
+<ul>
+  @foreach(var machine in ViewBag.M)
+  {
+    <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
+  }
+</ul>
