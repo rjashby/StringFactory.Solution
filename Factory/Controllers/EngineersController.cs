@@ -71,7 +71,22 @@ namespace StringFactory.Controllers
     public ActionResult AddMachine(int id)
     {
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
-      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      var thisMachineEngineer = _db.MachineEngineer.Where(machineengineer => machineengineer.EngineerId == id);
+      
+      List<Machine> machines = _db.Machines.ToList();
+      List<Machine> machineList = _db.Machines.ToList();
+
+      foreach (MachineEngineer machineEngineer in thisMachineEngineer)
+      {
+        foreach(Machine machine in machines)
+        {
+          if (machine.MachineId == machineEngineer.MachineId)
+          {
+            machineList.Remove(machine);
+          }
+        }
+      }
+      ViewBag.MachineId = new SelectList(machineList, "MachineId", "Name");
       return View(thisEngineer);
     }
 
