@@ -1,17 +1,24 @@
 @{
   Layout = "_Layout";
 }
-
-<ul>
-@foreach (var engineer in ViewBag.E)
-{
-  <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
-}
-</ul>
-
-<ul>
-  @foreach(var machine in ViewBag.M)
-  {
-    <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
-  }
-</ul>
+<h1>Hey! Check Out This Cool List of Machines and Engineers!</h1>
+<div class="row">
+  <div class="col">
+    <h4>Machines</h4>
+    <ul>
+      @foreach (var potato in ViewBag.E)
+      {
+        <li>@Html.ActionLink($"{potato.Name}", "Details", "Engineers", new { id = potato.EngineerId })</li>
+      }
+    </ul>
+  </div>
+  <div class="col">
+    <h4>Engineers</h4>
+    <ul>
+      @foreach(var hotdogmountain in ViewBag.M)
+      {
+        <li>@Html.ActionLink($"{hotdogmountain.Name}", "Details", "Machines", new { id = hotdogmountain.MachineId })</li>
+      }
+    </ul>
+  </div>
+</div>

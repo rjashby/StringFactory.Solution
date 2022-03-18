@@ -2,11 +2,11 @@
 
 #### By _**Ryan Ashby**_ 
 
-#### _This application allows a user to add a series of "stylists" to a database table. The application also allows the user to add "clients" to a separate table in the database. All clients are tied to a specific stylist._
+#### _This application allows a user to add a series of "machines" to a database table. The application also allows the user to add a series of "engineers" to a separate table in the database. Machines and engineers are tied together in a separate join table, using a many-to-many relationship structure._
 
 ### _Link to GitHub Repository_
 
-* https://github.com/rjashby/HairSalon.Solution
+* https://github.com/rjashby/StringFactory.Solution
 
 ## Technologies Used 
 
@@ -23,11 +23,13 @@
 
 ## Description 
 
-_This simple C# application gathers input from a user from form input fields. The user can add "stylist" objects to a list of stylists, which are stored in a database. The stylists will have a list to populate with "clients" as new clients are obtained_
+_This simple C# application gathers input from a user from form input fields. The user can add "machine" objects to a list of machines, which are stored in a database table._
 
-_Once stylists are added to the database, a list of clients can be added to each individual stylist. Ultimately, the stylist's clients can be displayed in a list._
+_Users will also be able to "engineer" objects to a list engineers, stored in a separate database table._
 
-_A user can also, edit or delete clients and stylists as necessary, updating the database._
+_Both machines and engineers will be displayed in a list on the relevant pages. The machine and engineer tables are connected via a third join table, titled "MachineEngineer."_
+
+_A user can edit or delete engineers and machines as necessary, automatically updating the database._
  
 ## Setup/Installation Requirements 
 
@@ -44,21 +46,21 @@ _A user can also, edit or delete clients and stylists as necessary, updating the
 
 1) _In order to utilize this page on your local machine, you will need to clone a copy of this repository._
 
-2) _Navigate to your desired directory in your command terminal and run:_ ``` $ git clone https://github.com/rjashby/HairSalon.Solution```
+2) _Navigate to your desired directory in your command terminal and run:_ ``` $ git clone https://github.com/rjashby/StringFactory.Solution```
 
 3) _Once cloned, open the folder of the cloned repository in your code editor to view all the necessary files._
 
 
 **Downloading**
 
-1) _In your browser, navigate to hhttps://github.com/rjashby/HairSalon.Solution, and click the green "Code" button, which will provide a drop down menu. Click on "Download ZIP" at the bottom of the menu, and save it to your desired location._
+1) _In your browser, navigate to https://github.com/rjashby/StringFactory.Solution, and click the green "Code" button, which will provide a drop down menu. Click on "Download ZIP" at the bottom of the menu, and save it to your desired location._
 
 2) _Once downloaded, unzip and extract the files._
 
 3) _Follow the steps above to view, edit, and open the files as needed._
 
 
-**Importing The Database**
+**Creating The Database**
 
 1) _Open mySQl Workbench. In the Navigator, click on the "Administration" window, then select Data Import/Restore._
 
@@ -78,7 +80,7 @@ _A user can also, edit or delete clients and stylists as necessary, updating the
 ```
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=to_do_list;uid=[Your Id Goes Here];pwd=[Your Password Here];"
+      "DefaultConnection": "Server=localhost;Port=3306;database=[Your Database Name Goes Here];uid=[Your Id Goes Here];pwd=[Your Password Here];"
   }
 }
 ```
@@ -93,9 +95,9 @@ _A user can also, edit or delete clients and stylists as necessary, updating the
 
 **Running the Program**
 
-1) _In your terminal, navigate to the HairSalon folder by starting at the root directory and typing the following into your terminal:_ ```cd HairSalon```
+1) _In your terminal, navigate to the Factory folder by starting at the root directory and typing the following into your terminal:_ ```cd Factory```
 
-2) _In the HairSalon directory run ```dotnet restore``` to download the needed dependencies._
+2) _In the Factory directory run ```dotnet restore``` to download the needed dependencies._
 
 3) _Once here, you will need to run the following in your terminal:_ ```dotnet build```
 

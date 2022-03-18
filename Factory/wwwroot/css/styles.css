@@ -62,6 +62,18 @@ li {
   list-style-type: "🛠️";
 }
 
+#macDeets li {
+  list-style-type: "🎰";
+}
+
+#macIndex li {
+  list-style-type: "🎰";
+}
+
+.row li {
+  list-style-type: "⚙️";
+}
+
 input {
   background-color: lightslategray;
 }

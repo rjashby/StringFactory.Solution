@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@using StringFactory.Models;
+<div id="macDeets">
 @model StringFactory.Models.Machine;
 
 <h2>Machine Details</h2>
@@ -27,3 +27,4 @@ else
 <p>@Html.ActionLink("Back to categories", "Index")</p>
 <p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
+</div>
